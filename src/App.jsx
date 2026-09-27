@@ -323,6 +323,7 @@ function AddRecipe({ fetchRecipes, authorList, authorsLoading }) {
           <Form.Label className="menu-card__label">Instructions</Form.Label>
           <Form.Control
             className="diner-input"
+            as="textarea"
             placeholder="Instructions"
             value={instructions}
             onChange={(event) => setInstructions(event.target.value)}

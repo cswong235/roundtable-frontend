@@ -13,7 +13,7 @@ function TagInput({ tags, onChange, placeholder }) {
   }
 
   function handleKeyDown(event) {
-    if (event.key === 'Enter' || event.key === ',') {
+    if (event.key === 'Enter') {
       event.preventDefault();
       commitDraft();
     } else if (event.key === 'Backspace' && !draft && tags.length > 0) {
