@@ -1,0 +1,289 @@
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Josefin+Sans:wght@400;600;700&family=Yellowtail&display=swap');
+
+:root {
+  --diner-red: #b5121b;
+  --diner-red-dark: #8a0d14;
+  --diner-cream: #f7f0e1;
+  --diner-cream-dark: #ece1c8;
+  --diner-ink: #2b1d17;
+  --diner-mint: #7fc8b4;
+  --diner-shadow: 6px 6px 0 var(--diner-red-dark);
+  --checker: repeating-conic-gradient(var(--diner-red) 0 25%, var(--diner-cream) 0 50%) 0 0 / 28px 28px;
+  --checker-small: repeating-conic-gradient(var(--diner-ink) 0 25%, var(--diner-cream) 0 50%) 0 0 / 14px 14px;
+}
+
+body {
+  margin: 0;
+  background-color: var(--diner-cream);
+  background-image:
+    radial-gradient(rgba(181, 18, 27, 0.06) 1px, transparent 1px);
+  background-size: 18px 18px;
+  color: var(--diner-ink);
+  font-family: 'Josefin Sans', system-ui, sans-serif;
+}
+
+.diner {
+  position: relative;
+  min-height: 100vh;
+  padding: 0 0 72px;
+}
+
+.diner::before {
+  content: "";
+  display: block;
+  height: 28px;
+  background: var(--checker);
+  border-bottom: 4px solid var(--diner-red);
+}
+
+.diner::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 28px;
+  background: var(--checker);
+  border-top: 4px solid var(--diner-red);
+}
+
+.diner__logo {
+  display: block;
+  margin: 18px auto 8px;
+  filter: drop-shadow(3px 3px 0 rgba(138, 13, 20, 0.2));
+}
+
+.diner__layout {
+  margin: 0 auto;
+  padding: 16px 24px 0;
+  border-top: 3px double var(--diner-red);
+}
+
+.diner__column--forms {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.section-title {
+  display: inline-block;
+  margin: 0 0 18px;
+  font-family: 'Alfa Slab One', serif;
+  font-size: 2rem;
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  color: var(--diner-red);
+  text-shadow: 3px 3px 0 var(--diner-cream-dark);
+}
+
+.section-title--card {
+  display: block;
+  margin: -24px -24px 20px;
+  padding: 14px 24px 12px;
+  background: var(--diner-red);
+  color: var(--diner-cream);
+  text-shadow: 2px 2px 0 var(--diner-red-dark);
+  border-bottom: 6px solid transparent;
+  border-image: var(--checker-small) 0 0 100% 0 / 0 0 6px 0 stretch;
+}
+
+.recipes-panel {
+  padding-top: 8px;
+}
+
+.recipes-panel__stage {
+  display: flex;
+  flex-direction: column;
+}
+
+.diner-loading {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  align-self: flex-start;
+  padding: 12px 20px;
+  background: #fff;
+  border: 2px solid var(--diner-red);
+  border-radius: 999px;
+  box-shadow: 4px 4px 0 var(--diner-red-dark);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--diner-red);
+}
+
+.diner-loading__spinner {
+  width: 1.4rem;
+  height: 1.4rem;
+  color: var(--diner-red);
+}
+
+.menu-card {
+  position: relative;
+  padding: 24px;
+  background: #fffaf0;
+  border: 3px solid var(--diner-red);
+  border-radius: 14px;
+  box-shadow: var(--diner-shadow);
+  overflow: hidden;
+}
+
+.menu-card--compact {
+  max-width: 640px;
+}
+
+.menu-card__inner {
+  padding: 0;
+}
+
+.menu-card__form {
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-card__row {
+  margin-bottom: 14px;
+  row-gap: 14px;
+}
+
+.menu-card__form > .menu-card__label {
+  margin-top: 4px;
+}
+
+.menu-card__label {
+  margin-bottom: 6px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--diner-red-dark);
+}
+
+.diner-input,
+.menu-card .form-control,
+.menu-card .form-select {
+  background-color: var(--diner-cream);
+  border: 2px solid var(--diner-ink);
+  border-radius: 8px;
+  color: var(--diner-ink);
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 1rem;
+  padding-top: 0.5rem;
+  transition: border-color 0.15s, box-shadow 0.15s, background-color 0.15s;
+}
+
+.diner-input::placeholder,
+.menu-card .form-control::placeholder {
+  color: rgba(43, 29, 23, 0.45);
+}
+
+.diner-input:focus,
+.menu-card .form-control:focus,
+.menu-card .form-select:focus {
+  background-color: #fff;
+  border-color: var(--diner-red);
+  box-shadow: 3px 3px 0 var(--diner-red);
+  color: var(--diner-ink);
+}
+
+.diner-input:disabled {
+  background-color: var(--diner-cream-dark);
+  opacity: 0.8;
+}
+
+.menu-card .input-group {
+  margin-bottom: 14px;
+}
+
+.menu-card .input-group .form-control {
+  border-right: none;
+}
+
+.menu-card .input-group .btn {
+  border: 2px solid var(--diner-ink);
+  border-radius: 0 8px 8px 0;
+  background: var(--diner-ink);
+  color: var(--diner-cream);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.menu-card .input-group .btn:hover {
+  background: var(--diner-red);
+  border-color: var(--diner-red);
+}
+
+.menu-card .badge {
+  background: var(--diner-red) !important;
+  border-radius: 999px;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.time-range {
+  align-items: center;
+  font-family: 'Yellowtail', cursive;
+  font-size: 1.3rem;
+  color: var(--diner-red);
+}
+
+.time-range__input {
+  min-width: 0;
+}
+
+.time-range__unit {
+  flex: 0 0 auto;
+  width: auto;
+}
+
+.diner-error {
+  display: block;
+  margin-top: 4px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.menu-card .text-danger {
+  color: var(--diner-red) !important;
+}
+
+.diner-btn,
+.diner-btn.btn {
+  align-self: flex-start;
+  margin-top: 18px;
+  padding: 10px 28px 7px;
+  background: var(--diner-red);
+  border: 3px solid var(--diner-ink);
+  border-radius: 999px;
+  box-shadow: 4px 4px 0 var(--diner-ink);
+  color: var(--diner-cream);
+  font-family: 'Alfa Slab One', serif;
+  font-size: 1.05rem;
+  letter-spacing: 0.06em;
+  transition: transform 0.12s, box-shadow 0.12s, background-color 0.12s;
+}
+
+.diner-btn:hover,
+.diner-btn.btn:hover {
+  background: var(--diner-red-dark);
+  border-color: var(--diner-ink);
+  color: var(--diner-cream);
+  transform: translate(-1px, -1px);
+  box-shadow: 5px 5px 0 var(--diner-ink);
+}
+
+.diner-btn:active,
+.diner-btn.btn:active {
+  background: var(--diner-red-dark) !important;
+  border-color: var(--diner-ink) !important;
+  transform: translate(3px, 3px);
+  box-shadow: 1px 1px 0 var(--diner-ink);
+}
+
+.diner-btn:focus-visible {
+  outline: 3px dashed var(--diner-red);
+  outline-offset: 4px;
+}
+
