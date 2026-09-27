@@ -42,10 +42,10 @@ function RecipeCard({ recipe }) {
           {recipe.chef_name && 
             <span className="recipe-card__chef">by {recipe.chef_name}
               <span>
-                {typeof recipe.rating === 'number' && (
+                {typeof recipe.chef_rating === 'number' && (
                   <div className="recipe-card__rating">
-                    ({'★'.repeat(recipe.rating)}
-                    {'☆'.repeat(Math.max(0, 5 - recipe.rating))})
+                    ({'★'.repeat(recipe.chef_rating)}
+                    {'☆'.repeat(Math.max(0, 5 - recipe.chef_rating))})
                   </div>
                 )}
               </span>
