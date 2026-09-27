@@ -10,11 +10,17 @@ Features include:
 
 Built with:
 - JavaScript (ES6)
+- PostgreSQL
 - React
 - HTML
 - CSS
 - Bootstrap
 - Depth Carousel from React Bits (https://reactbits.dev/components/depth-carousel)
+
+Deployed with:
+- Railway: For frontend and backend service
+  - Backend service can be found here: https://github.com/cswong235/roundtable-backend
+- Supabase: For database hosting
 
 ## Links
 - Railway link: https://roundtable-frontend-production.up.railway.app/
